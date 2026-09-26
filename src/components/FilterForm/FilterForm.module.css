@@ -1,0 +1,125 @@
+.formContainer {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.locationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--dark-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--main-green);
+}
+
+.filterHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-text);
+}
+
+.radioList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark-text);
+  cursor: pointer;
+}
+
+.radioInput {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--main-green);
+  cursor: pointer;
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.searchBtn {
+  width: 100%;
+  padding: 14px 32px;
+  background-color: var(--main-green);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 200px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.searchBtn:hover {
+  background-color: var(--main-green-hover);
+}
+
+.clearBtn {
+  width: 100%;
+  padding: 12px 32px;
+  background-color: #ffffff;
+  color: var(--dark-text);
+  border: 1px solid var(--border-color);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 200px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.clearBtn:hover {
+  border-color: var(--main-green);
+  background-color: #f7f8fa;
+}
