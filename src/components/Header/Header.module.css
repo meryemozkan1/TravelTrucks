@@ -1,7 +1,7 @@
 .header {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 24px 64px;
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--border-color);
@@ -15,9 +15,14 @@
   font-weight: 700;
   color: var(--dark-text);
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 32px;
 }

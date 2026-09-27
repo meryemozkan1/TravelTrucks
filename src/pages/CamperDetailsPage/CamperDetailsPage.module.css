@@ -1,0 +1,372 @@
+/* ─── CONTAINER ───────────────────────────────────── */
+.container {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* ─── TOP SECTION: 2-COLUMN GRID ─────────────────── */
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 44px;
+}
+
+/* ─── GALLERY COLUMN ──────────────────────────────── */
+.galleryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 357px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.thumbBtn {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.thumbBtn img {
+  width: 100%;
+  height: 112px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+}
+
+.thumbBtn:hover img {
+  opacity: 0.8;
+}
+
+.thumbBtn.active img {
+  outline: 2px solid #101828;
+  outline-offset: 0;
+}
+
+/* ─── INFO COLUMN ─────────────────────────────────── */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Top card: name + rating + price + description */
+.infoCard {
+  background: #F7F7F7;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.infoCard h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Rating + Location row */
+.ratingLocation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 16px;
+  align-items: center;
+}
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #101828;
+}
+
+.ratingUnderline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.locationItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #101828;
+}
+
+/* Price */
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin: 0;
+}
+
+/* ─── VEHICLE DETAILS CARD ────────────────────────── */
+.vehicleDetailsCard {
+  background: #F7F7F7;
+  padding: 24px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vehicleDetailsCard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  background: #FFFFFF;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Specs Table */
+.specsTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.specsTable div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #DADDE1;
+  font-size: 16px;
+  color: #101828;
+}
+
+.specsTable div span {
+  color: #101828;
+}
+
+.specsTable div:last-child {
+  border-bottom: none;
+}
+
+/* ─── BOTTOM SECTION: 2-COLUMN GRID ──────────────── */
+.bottomSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ─── REVIEWS COLUMN ──────────────────────────────── */
+.reviewsColumn > h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 24px 0;
+}
+
+.reviewCard {
+  background: #F7F7F7;
+  padding: 24px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #F2F4F7;
+  color: #E44848;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #101828;
+  line-height: 1;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewCard p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin: 0;
+}
+
+/* ─── BOOKING COLUMN ──────────────────────────────── */
+.bookingCard {
+  border: 1px solid #DADDE1;
+  border-radius: 16px;
+  padding: 40px 32px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bookingCard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 4px 0;
+}
+
+.bookingCard p {
+  font-size: 16px;
+  color: #475467;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bookingForm input {
+  width: 100%;
+  padding: 18px 20px;
+  background: #F7F7F7;
+  border: 1px solid #F7F7F7;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #101828;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.bookingForm input:focus {
+  border-color: #DADDE1;
+}
+
+.bookingForm input::placeholder {
+  color: #475467;
+  opacity: 0.6;
+}
+
+.sendBtn {
+  width: 100%;
+  padding: 18px;
+  background: #475467;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+
+.sendBtn:hover {
+  background: #344054;
+}
+
+/* ─── ERROR STATE ─────────────────────────────────── */
+.errorContainer {
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  color: #101828;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #475467;
+  color: #FFFFFF;
+  border-radius: 200px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .topSection,
+  .bottomSection {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Header from './components/Header/Header.jsx';
 import HomePage from './pages/HomePage/HomePage.jsx';
 import CatalogPage from './pages/CatalogPage/CatalogPage.jsx';
@@ -15,6 +16,7 @@ function App() {
         <Route path="/catalog/:id" element={<CamperDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Toaster position="top-right" />
     </>
   );
 }
