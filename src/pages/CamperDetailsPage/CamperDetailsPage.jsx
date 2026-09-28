@@ -155,19 +155,19 @@ export default function CamperDetailsPage() {
             alt={name}
           />
           <div className={styles.thumbnails}>
-            {gallery.slice(0, 4).map((img, i) => (
-              <button
+            {gallery.map((img, i) => (
+              <div
                 key={i}
-                type="button"
-                className={`${styles.thumbBtn} ${activeImageIdx === i ? styles.active : ''}`}
+                className={`${styles.thumbWrapper} ${activeImageIdx === i ? styles.activeThumb : ''}`}
                 onClick={() => setActiveImageIdx(i)}
+                role="button"
                 aria-label={`Show image ${i + 1}`}
               >
                 <img
                   src={img.thumb || img.original || getImgSrc(img)}
                   alt={`${name} ${i + 1}`}
                 />
-              </button>
+              </div>
             ))}
           </div>
         </div>
@@ -249,7 +249,7 @@ export default function CamperDetailsPage() {
         </div>
 
         {/* RIGHT: Booking */}
-        <div>
+        <div className={styles.bookingColumn}>
           <div className={styles.bookingCard}>
             <div>
               <h3>Book your campervan now</h3>

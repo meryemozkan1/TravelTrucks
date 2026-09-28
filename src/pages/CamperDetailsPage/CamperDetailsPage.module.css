@@ -2,7 +2,7 @@
 .container {
   max-width: 1312px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 80px 20px;
   box-sizing: border-box;
 }
 
@@ -10,9 +10,9 @@
 .topSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  margin-bottom: 44px;
+  column-gap: 48px;
+  align-items: stretch;
+  margin-bottom: 88px;
 }
 
 /* ─── GALLERY COLUMN ──────────────────────────────── */
@@ -20,51 +20,59 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .mainImage {
   width: 100%;
-  height: 357px;
+  height: 380px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
 }
 
 .thumbnails {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 16px;
   width: 100%;
+  margin-top: 16px;
 }
 
-.thumbBtn {
-  padding: 0;
-  border: none;
-  background: none;
+/* Direct img inside thumbnails (fallback) */
+.thumbnails img {
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 10px;
   cursor: pointer;
+}
+
+.thumbWrapper {
+  flex: 1;
+  height: 120px;
   border-radius: 10px;
   overflow: hidden;
-  outline: none;
-  display: block;
-  width: 100%;
-}
-
-.thumbBtn img {
-  width: 100%;
-  height: 112px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
+  cursor: pointer;
   transition: opacity 0.2s;
 }
 
-.thumbBtn:hover img {
+.thumbWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbWrapper:hover {
   opacity: 0.8;
 }
 
-.thumbBtn.active img {
+.activeThumb {
   outline: 2px solid #101828;
   outline-offset: 0;
+  border-radius: 10px;
 }
 
 /* ─── INFO COLUMN ─────────────────────────────────── */
@@ -72,6 +80,8 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  height: 100%;
+  justify-content: space-between;
 }
 
 /* Top card: name + rating + price + description */
@@ -145,6 +155,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: auto;
 }
 
 .vehicleDetailsCard h3 {
@@ -202,8 +213,8 @@
 .bottomSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
+  column-gap: 48px;
+  align-items: stretch;
 }
 
 /* ─── REVIEWS COLUMN ──────────────────────────────── */
@@ -235,8 +246,8 @@
   height: 44px;
   min-width: 44px;
   border-radius: 50%;
-  background: #F2F4F7;
-  color: #E44848;
+  background: #829B91;
+  color: #FFFFFF;
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -270,6 +281,12 @@
 }
 
 /* ─── BOOKING COLUMN ──────────────────────────────── */
+.bookingColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .bookingCard {
   border: 1px solid #DADDE1;
   border-radius: 16px;
@@ -277,7 +294,9 @@
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .bookingCard h3 {
@@ -298,6 +317,8 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 .bookingForm input {
@@ -325,7 +346,7 @@
 .sendBtn {
   width: 100%;
   padding: 18px;
-  background: #475467;
+  background: #829B91;
   color: #FFFFFF;
   border: none;
   border-radius: 200px;
@@ -337,7 +358,7 @@
 }
 
 .sendBtn:hover {
-  background: #344054;
+  background: #6D7B75;
 }
 
 /* ─── ERROR STATE ─────────────────────────────────── */
