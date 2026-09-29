@@ -52,6 +52,8 @@ export default function CamperDetailsPage() {
   const error = useSelector((state) => state.campers.error);
 
   const [activeImageIdx, setActiveImageIdx] = useState(0);
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [formErrors, setFormErrors] = useState({ name: '', email: '' });
 
   useEffect(() => {
     if (id) {
@@ -60,16 +62,41 @@ export default function CamperDetailsPage() {
     }
   }, [dispatch, id]);
 
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (formErrors[name]) {
+      setFormErrors((prev) => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validate = () => {
+    const errors = { name: '', email: '' };
+    let valid = true;
+    if (!formData.name.trim() || /\d/.test(formData.name)) {
+      errors.name = 'Please enter your name.';
+      valid = false;
+    }
+    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = 'Please enter your email.';
+      valid = false;
+    }
+    setFormErrors(errors);
+    return valid;
+  };
+
   const handleBooking = (e) => {
     e.preventDefault();
+    if (!validate()) return;
     toast.success('Booking successfully submitted!');
-    e.target.reset();
+    setFormData({ name: '', email: '' });
+    setFormErrors({ name: '', email: '' });
   };
 
   if (isLoading) {
     return (
       <main className={styles.container}>
-        <Loader />
+        <Loader overlay />
       </main>
     );
   }
@@ -255,9 +282,47 @@ export default function CamperDetailsPage() {
               <h3>Book your campervan now</h3>
               <p>Stay connected! We are always ready to help you.</p>
             </div>
-            <form onSubmit={handleBooking} className={styles.bookingForm}>
-              <input type="text" placeholder="Name*" required />
-              <input type="email" placeholder="Email*" required />
+            <form onSubmit={handleBooking} className={styles.bookingForm} noValidate>
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>Name*</label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    placeholder="Name*"
+                    className={formErrors.name ? styles.inputError : ''}
+                  />
+                  {formErrors.name && (
+                    <span className={styles.inputIcon}>⚠</span>
+                  )}
+                </div>
+                {formErrors.name && (
+                  <p className={styles.errorMsg}>{formErrors.name}</p>
+                )}
+              </div>
+
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>Email*</label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    placeholder="Email*"
+                    className={formErrors.email ? styles.inputError : ''}
+                  />
+                  {formErrors.email && (
+                    <span className={styles.inputIcon}>⚠</span>
+                  )}
+                </div>
+                {formErrors.email && (
+                  <p className={styles.errorMsg}>{formErrors.email}</p>
+                )}
+              </div>
+
               <button type="submit" className={styles.sendBtn}>Send</button>
             </form>
           </div>

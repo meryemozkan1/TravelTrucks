@@ -17,7 +17,6 @@
 .cardsList {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
 
 .loadMoreBtn {
@@ -47,4 +46,84 @@
   color: var(--secondary-text);
   text-align: center;
   padding: 40px 0;
+}
+
+/* ─── EMPTY STATE ──────────────────────────── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 16px;
+  flex: 1;
+  text-align: center;
+}
+
+.emptyIllustration {
+  width: 260px;
+  height: 180px;
+  margin-bottom: 8px;
+}
+
+.emptyTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0;
+}
+
+.emptyDesc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475467;
+  margin: 0;
+  max-width: 380px;
+}
+
+.emptyActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clearFiltersBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #ffffff;
+  border: 1px solid #DADDE1;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.clearFiltersBtn:hover {
+  border-color: #829B91;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #829B91;
+  border: none;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.viewAllBtn:hover {
+  background: #6D7B75;
 }

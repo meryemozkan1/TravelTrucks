@@ -23,7 +23,7 @@ export default function CamperCard({ item }) {
   const imageUrl =
     item.gallery?.[0]?.thumb || item.gallery?.[0]?.original || item.gallery?.[0];
 
-  const formattedPrice = `€${item.price}`;
+  const formattedPrice = `€${Number(item.price).toFixed(2)}`;
   const reviewCount = item.reviews ? item.reviews.length : 0;
 
   const getFormLabel = (form) => {

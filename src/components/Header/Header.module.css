@@ -10,13 +10,20 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 4px;
   font-size: 20px;
-  font-weight: 700;
-  color: var(--dark-text);
+  color: #101828;
   text-decoration: none;
   position: relative;
   z-index: 1;
+  letter-spacing: 0;
+}
+
+.logoBold {
+  font-weight: 700 !important;
+}
+
+.logoNormal {
+  font-weight: 400 !important;
 }
 
 .nav {

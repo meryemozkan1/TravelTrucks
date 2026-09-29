@@ -5,7 +5,8 @@ export default function Header() {
   return (
     <header className={css.header}>
       <NavLink to="/" className={css.logo}>
-        TravelTrucks
+        <span className={css.logoBold}>Travel</span>
+        <span className={css.logoNormal}>Trucks</span>
       </NavLink>
       <nav className={css.nav}>
         <NavLink
